@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,500&display=swap');
+.navbar-brand {
+    font-family: montserrat;
+    font-weight: 500;
+}
+
+nav ul li .nav-item a:hover {
+    color: black;
+}
+
+h1 {
+    font-family: montserrat;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+a {
+    font-family: montserrat;
+    font-weight: 400;
+    color: black;
+}
+
+a:hover {
+    font-family: montserrat;
+    font-weight: 400;
+    color: gray;
+}
+
+.m {
+    margin-bottom: 3rem;
+}
+
+.m1 {
+    margin-bottom: 5rem;
+}
+
+.col .card {
+    width: 255px;
+    margin-bottom: 2rem;
+}
+
+.col .card:hover {
+    border-color: gray;
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 17px;
+    }
+    .kategori a,
+    p {
+        font-size: 14px !important;
+    }
+    table,
+    table a,
+    table button {
+        font-size: 11px !important;
+    }
+    .m {
+        margin-bottom: 1rem;
+    }
+    .m1 {
+        margin-bottom: 2rem;
+    }
+    .col .card {
+        width: 150px;
+        margin-bottom: 1rem;
+        font-size: 12px;
+        font-family: montserrat;
+    }
+    .detail .row .col img {
+        width: 80vw !important;
+    }
+}

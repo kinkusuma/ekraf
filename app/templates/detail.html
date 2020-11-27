@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="my-5">
+    <div class="container">
+        <div class="detail">
+            <div class="row">
+                <div class="col">
+                    <img src="{{ produk.gambar.url }}" alt="gambar {{ produk.judul }}">
+                </div>
+                <div class="col">
+                    <h1 class="my-5">
+                        {{ produk.judul }}
+                    </h1>
+                    <p>
+                        Harga : Rp {{ produk.harga }}
+                    </p>
+                    <p>
+                        Penjual : {{ produk.nama_anda_sesuai_akun }}
+                    </p>
+                    <p>
+                        Kontak penjual : {{ produk.nomor_hp_atau_whatsapp }}
+                    </p>
+                </div>
+            </div>
+            <p class="my-4">
+                {{ produk.deskripsi }}
+            </p>
+            <p>
+                Kategori: {{ produk.kategori_produk }}
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

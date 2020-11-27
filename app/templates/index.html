@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<img class="m" src="{% static 'img/hero.png' %}" alt="banner" style="width: 100%;">
+<div class="container">
+    <div class="kategori m1">
+        <h1>
+            Kategori
+        </h1>
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'animasi' %}">- Animasi.</a><br>
+                <a href="{% url 'busana' %}">- Busana.</a><br>
+                <a href="{% url 'darsi' %}">- Desain Arsitektur.</a><br>
+            </div>
+            <div class="col">
+                <a href="{% url 'dinter' %}">- Desain Interior.</a><br>
+                <a href="{% url 'dkv' %}">- Desain Komunikasi Visual.</a><br>
+                <a href="{% url 'fotografi' %}">- Fotografi.</a><br>
+            </div>
+            <div class="col">
+                <a href="{% url 'kerajinan' %}">- Kerajinan Tangan.</a><br>
+                <a href="{% url 'musik' %}">- Musik.</a><br>
+                <a href="{% url 'pariwisata' %}">- Produk pariwisata.</a><br>
+            </div>
+            <div class="col">
+                <a href="{% url 'video' %}">- Video.</a><br>
+                <a href="{% url 'seni' %}">- Seni Murni.</a><br>
+                <a href="{% url 'lainnya' %}">- Lainnya.</a><br>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Produk m1">
+        <h1 class="m">
+            Produk {{ namaproduk }} Yang Tesedia
+        </h1>
+        <div class="row">
+            {% for produk in produks %}
+            <div class="col">
+                <a href="{% url 'detail' pk=produk.id %}">
+                    <div class="card">
+                        <img src="{{ produk.gambar.url }}" class="card-img-top" alt="{{ produk.judul }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ produk.judul }}</h5>
+                            <p class="card-text">{{ produk.harga }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="Produk m1">
+            <h1 class="m">
+                Ingin Menjual Produk-mu di Ekraf?
+            </h1>
+            <a href="{% url 'add-product' %}" class="btn btn-dark"> Jual produk </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% if user.is_anonymous %}
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">EKRAF</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <a class="btn btn-outline-light" href="{% url 'masuk' %}">Masuk</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endif %} {% if user.is_authenticated %}
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">EKRAF</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active mx-5">
+                    <a class="btn btn-outline-light" href="{% url 'user' %}">Akun saya</a>
+                </li>
+                <li>
+                    <a class="btn btn-outline-light" href="{% url 'keluar' %}">Keluar</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endif %}

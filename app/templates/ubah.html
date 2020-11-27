@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="my-5">
+    <div class="container">
+        <form action="{% url 'ubah' produk.id %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %} {{ form.as_p }}
+            <a href="{% url 'user' %}" class="btn btn-danger">Kembali</a>
+            <button class="btn btn-dark">Ubah produk</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

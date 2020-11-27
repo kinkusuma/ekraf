@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<div class="my-5">
+    <div class="container">
+        <form action="{% url 'add-product' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Nama Produk:</label>
+                <small class="form-text text-muted">Masukkan nama produk yang anda jual.</small> {{ form.judul }}
+            </div>
+            <div class="form-group">
+                <label>Cover Produk:</label>
+                <small class="form-text text-muted">Berikan cover yang menarik. Sebisa mungkin cover berformat png, jpg atau jpeg. Berbentuk persegi, dan berukuran tidak lebih dari 500px</small> {{ form.gambar }}
+            </div>
+            <div class="form-group">
+                <label>Harga Produk:</label>
+                <small class="form-text text-muted">Masukkan harga produk anda, hanya angka, contoh 100000.</small> {{ form.harga }}
+            </div>
+            <div class="form-group">
+                <label>Deskripsi:</label>
+                <small class="form-text text-muted">Deskripsikan produk anda, jangan lupa untuk memasukkan akun sosial media yang anda gunakan, bila ada.</small> {{ form.deskripsi }}
+            </div>
+            <div class="form-group">
+                <label>Kategori Produk:</label>
+                <small class="form-text text-muted"></small> {{ form.kategori_produk }}
+            </div>
+            <div class="form-group">
+                <label>Nama Pengguna Yang Akan Mengurus Produk Ini:</label>
+                <small class="form-text text-muted">Masukkan nama pengguna yang akan mengurus produk ini, seperti mengubah produk atau hapus, atau masukkan nama pengguna anda ({{ user.get_username }}), <br> nama pengguna yang anda masukkan bersifata case-sensitif, jadi harap perhatikan besar kecil huruf.</small>                {{ form.nama_anda_sesuai_akun }}
+            </div>
+            <div class="form-group">
+                <label>Nomor Hp atau Whatsapp</label>
+                <small class="form-text text-muted">Masukkan nomor hp anda atau nomor whatsapp anda, agar anda dapat dihubungi oleh pengguna yang tertarik membeli produk/jasa anda.</small> {{ form.nomor_hp_atau_whatsapp }}
+            </div>
+            <button class="btn btn-dark">Tambah produk</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

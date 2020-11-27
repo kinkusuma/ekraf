@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% load static %} {% block content %} {% if user.is_anonymous %}
+
+<div class="container">
+    <div class="login">
+        <div class="card my-3">
+            <div class="card-body">
+                <h1>
+                    Masuk
+                </h1>
+                <form method="POST">
+                    {% csrf_token %} {{ form.as_p }}
+                    <button class="btn btn-secondary mb-4">Masuk</button>
+
+                </form>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <p>
+                    Pengguna baru?
+                </p>
+                <a class="btn btn-secondary" href="{% url 'daftar' %}">Daftar</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% else %}
+
+<meta http-equiv="refresh" content="0; url={% url 'index' %}"> {% endif %} {% endblock %}
