@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +26,7 @@ SECRET_KEY = 'n-vr&%9l_ot9!lq@^zlt#!*hag^@r(%njf5vf5_%kam-p@2(6m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ekraf.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -136,6 +135,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 LOGIN_REDIRECT_URL = 'index'
 
 LOGIN_URL = 'masuk'
-
-# Activate Django-Heroku.
-django_heroku.settings(locals())
