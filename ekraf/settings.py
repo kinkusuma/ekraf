@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary_storage',
-    'cloudinary',
     'app',
 ]
 
@@ -138,11 +136,3 @@ LOGIN_REDIRECT_URL = 'index'
 
 LOGIN_URL = 'masuk'
 
-
-CLOUDINARY_STORAGE = {
-             'CLOUD_NAME': 'hya6hmzee',
-             'API_KEY': '562937284725338',
-             'API_SECRET': 'lR0RuQmNUwnWVX_EAvRXA-iaOLI'
-            }
-
-DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
