@@ -20,7 +20,7 @@
         <tbody>
             {% for produk in produks %}
             <tr>
-                <td>{{ produk.judul }}</td>
+                <td><a href="{% url 'detail' pk=produk.id %}">{{ produk.judul }}</a></td>
                 <td>{{ produk.harga }}</td>
                 <td>{{ produk.kategori_produk }}</td>
                 <td><a href="{% url 'ubah' produk.id %}" class=" btn btn-dark">Ubah</a></td>
