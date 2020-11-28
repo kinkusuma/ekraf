@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -128,9 +130,15 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
+CLOUDINARY_STORAGE = {
+             'CLOUD_NAME': 'your_cloud_name',
+             'API_KEY': 'your_api_key',
+             'API_SECRET': 'your_api_secret'
+            }
+    
+MEDIA_URL = '/media/'  # or any prefix you choose
+     
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
 LOGIN_REDIRECT_URL = 'index'
 
