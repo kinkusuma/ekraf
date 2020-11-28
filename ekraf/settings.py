@@ -131,9 +131,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 CLOUDINARY_STORAGE = {
-             'CLOUD_NAME': 'your_cloud_name',
-             'API_KEY': 'your_api_key',
-             'API_SECRET': 'your_api_secret'
+             'CLOUD_NAME': 'hya6hmzee',
+             'API_KEY': '562937284725338',
+             'API_SECRET': 'lR0RuQmNUwnWVX_EAvRXA-iaOLI'
             }
     
 MEDIA_URL = '/media/'  # or any prefix you choose
