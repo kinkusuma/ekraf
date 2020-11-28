@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'n-vr&%9l_ot9!lq@^zlt#!*hag^@r(%njf5vf5_%kam-p@2(6m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['ekraf.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',   
+    'cloudinary_storage',
+    'cloudinary',
     'app',
 ]
 
@@ -135,3 +137,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 LOGIN_REDIRECT_URL = 'index'
 
 LOGIN_URL = 'masuk'
+
+
+CLOUDINARY_STORAGE = {
+             'CLOUD_NAME': 'hya6hmzee',
+             'API_KEY': '562937284725338',
+             'API_SECRET': 'lR0RuQmNUwnWVX_EAvRXA-iaOLI'
+            }
+            
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'

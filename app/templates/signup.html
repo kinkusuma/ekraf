@@ -6,7 +6,11 @@
             Daftar
         </h1>
         <form action="{% url 'daftar' %}" method="POST">
-            {% for message in messages %} {% if message %}
+            {% if form.error %} {% for field in form %} {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %} {% endfor %} {% endif %} {% for message in messages %} {% if message %}
 
             <div class="alert alert-secondary" role="alert">{{ message }}</div>
 
@@ -36,6 +40,7 @@
                     Masukkan sandi yang sama seperti sebelumnya, untuk verifikasi.
                 </small>
             </div>
+            <small><strong>Pastikan semua data yang anda masukkan benar agar tidak terjadi error</strong></small><br>
             <button class="btn btn-secondary">Daftar</button>
         </form>
     </div>

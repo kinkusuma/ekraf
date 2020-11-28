@@ -24,7 +24,8 @@
                 <td>{{ produk.harga }}</td>
                 <td>{{ produk.kategori_produk }}</td>
                 <td><a href="{% url 'ubah' produk.id %}" class=" btn btn-dark">Ubah</a></td>
-                <td><button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Hapus</button>
+                <td>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Hapus</button>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">

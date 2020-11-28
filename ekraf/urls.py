@@ -18,7 +18,9 @@ from django.urls import path
 from app.views import *
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import url
 from django.views.static import serve
+from django.urls import include
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
@@ -44,6 +46,8 @@ urlpatterns = [
     path('kategori/video', video,name='video'),
     path('kategori/seni-murni', seni,name='seni'),
     path('kategori/lainnya', lainnya,name='lainnya'),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
 
 if settings.DEBUG:

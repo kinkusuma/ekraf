@@ -11,7 +11,7 @@ class Kategori(models.Model):
 
 class Produk(models.Model):
     judul = models.CharField(max_length=100)
-    gambar = models.ImageField(null=True)
+    gambar = models.ImageField(upload_to='images/',null=True)
     harga  = models.IntegerField() 
     deskripsi = models.TextField(null=True)
     kategori_produk = models.ForeignKey(Kategori, on_delete=models.CASCADE, null=True)

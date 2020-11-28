@@ -33,7 +33,7 @@ def user(request):
 def daftar(request):
     if request.POST:
         form = UserCreationForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             messages.success(request, "Pendaftaran berhasil, silahkan masuk keakun anda")
             return redirect('daftar')
@@ -56,9 +56,10 @@ def tambah_produk(request):
         if form.is_valid():
             form.save()
             form = FormProduk()
-
             return redirect('user')
-
+        else:
+            messages.error(request, "Terjadi kesalahan, data yang dimasukkan tidak valid")
+            return redirect('add-product')
     else:
         form = FormProduk()
 
