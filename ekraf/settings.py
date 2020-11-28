@@ -130,12 +130,14 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
 CLOUDINARY_STORAGE = {
              'CLOUD_NAME': 'hya6hmzee',
              'API_KEY': '562937284725338',
              'API_SECRET': 'lR0RuQmNUwnWVX_EAvRXA-iaOLI'
             }
     
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 MEDIA_URL = '/media/'  # or any prefix you choose
      
 DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
