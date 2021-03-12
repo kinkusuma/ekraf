@@ -24,7 +24,7 @@ from django.urls import include
 from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
-    path('nasdboiheaianciaegr9237buw/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('masuk/', LoginView.as_view(), name='masuk'),
     path('keluar/', LogoutView.as_view(next_page='index'), name='keluar'),
